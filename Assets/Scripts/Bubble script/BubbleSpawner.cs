@@ -23,11 +23,11 @@ public class BubbleSpawner : MonoBehaviour
         // Instantiate a single bubble
         GameObject bubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity);
 
-        // Add random color to the bubble
-        //if (bubble.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
-        //{
-        //    spriteRenderer.color = new Color(Random.value, Random.value, Random.value);
-        //}
-    }
+            // Add random color to the bubble
+            //if (bubble.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
+            //{
+            //    spriteRenderer.color = new Color(Random.value, Random.value, Random.value);
+            //}
+        }
         }
 }
