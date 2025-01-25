@@ -32,9 +32,9 @@ public class RockSpawner : MonoBehaviour
             return;
         }
 
-        // Generate a random position for the rock
+        // Generate a random position for the rock at the bottom of the screen
         float randomX = Random.Range(minX, maxX);
-        Vector3 spawnPosition = new Vector3(randomX, Camera.main.orthographicSize + 1, 0);
+        Vector3 spawnPosition = new Vector3(randomX, -Camera.main.orthographicSize - 1, 0);
 
         // Instantiate the rock
         Instantiate(rockPrefab, spawnPosition, Quaternion.identity);

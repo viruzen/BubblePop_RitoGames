@@ -523,7 +523,6 @@ MonoBehaviour:
   OnScoreChanged:
     m_PersistentCalls:
       m_Calls: []
-  playerLives: 3
   scoreText: {fileID: 0}
   livesText: {fileID: 0}
   gameOverPanel: {fileID: 0}
@@ -655,11 +654,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1151840022775193793, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6395245
+      value: -2.39
       objectReference: {fileID: 0}
     - target: {fileID: 1151840022775193793, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.56
+      value: -11.38
       objectReference: {fileID: 0}
     - target: {fileID: 1151840022775193793, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_LocalPosition.z
@@ -699,6 +698,10 @@ PrefabInstance:
       objectReference: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
     - target: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
+      propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -818,15 +821,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3937699678748697241, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4509852303664382283, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
       propertyPath: m_Name
       value: PurpleBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509852303664382283, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: m_TagString
+      value: PurpleBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081471319258945618, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: spawnInterval
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081471319258945618, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: purpleBubblePrefab
+      value: 
+      objectReference: {fileID: 6259802406211112138}
+    - target: {fileID: 6573463575184625138, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+--- !u!1 &6259802406211112138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4509852303664382283, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+  m_PrefabInstance: {fileID: 6259802406211112137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7700664802172138256
 PrefabInstance:
   m_ObjectHideFlags: 0

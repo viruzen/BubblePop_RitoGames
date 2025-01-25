@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PurpleBubbleController : MonoBehaviour
 {
-    public float speed = 2f; // Speed at which the bubble moves upward
+    public float speed = 2f; // Speed at which the bubble moves
     public int scorePenalty = 50; // Score lost when the purple bubble is clicked
 
     void Start()
@@ -13,10 +13,10 @@ public class PurpleBubbleController : MonoBehaviour
 
     void Update()
     {
-        // Move the bubble upwards
+        // Move the bubble upwards (bottom to top)
         transform.Translate(Vector2.up * speed * Time.deltaTime);
 
-        // Destroy the bubble if it goes off-screen
+        // Destroy the bubble if it goes off the top of the screen
         if (transform.position.y > Camera.main.orthographicSize + 1)
         {
             Destroy(gameObject);

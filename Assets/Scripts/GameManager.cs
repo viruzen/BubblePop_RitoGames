@@ -4,14 +4,18 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton instance
+    
     public UnityEvent<int> OnScoreChanged = new UnityEvent<int>();
-    private int score = 0;
-    public int playerLives = 3; 
 
+    
+    // Game variables
+    private int score = 0; // Tracks player score
     public Text scoreText; // Assign this in the Inspector
     public Text livesText; // Assign this in the Inspector
     private int _score;
-    public GameObject gameOverPanel;
+    public GameObject gameOverPanel; // Assign this in the Inspector for Game Over UI
+
+
     void Awake()
     {
         // Ensure there s only one instance of GameManager
@@ -34,21 +38,13 @@ public class GameManager : MonoBehaviour
         /*score += amount;
         Debug.Log("Score: " + score); // Logs score to console for now
         UpdateUI();*/
-        
+
         _score += amount;
         OnScoreChanged.Invoke(_score);
     }
-
-    public void LoseLife(int amount)
+    public int GetScore()
     {
-        playerLives -= amount;
-        Debug.Log("Lives Remaining: " + playerLives);
-        UpdateUI();
-
-        if (playerLives <= 0)
-        {
-            GameOver();
-        }
+        return score;
     }
 
     private void GameOver()
@@ -68,8 +64,6 @@ public class GameManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = "Score: " + score;
 
-        if (livesText != null)
-            livesText.text = "Lives: " + playerLives;
     }
 
 }
