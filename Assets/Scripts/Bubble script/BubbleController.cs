@@ -6,7 +6,7 @@ public class BubbleController : MonoBehaviour
     public float minSpeed = 1f;
     public float maxSpeed = 3f;
     public float minScale = 0.7f; // Minimum scale for bubble size
-    public float maxScale = 1f; // Maximum scale
+    public float maxScale = 1.3f; // Maximum scale
     void Update()
     {
         // Move the bubble upwards

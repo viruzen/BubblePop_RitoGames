@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7392261625d1824baf53fbf6f74ad15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 1.4
+  minSpeed: 1
   maxSpeed: 3
   bonusPoints: 25
 --- !u!58 &359097949
@@ -265,8 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edf4169b39e0894e8861e2b6ba4f4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldenBubblePrefab: {fileID: 359097947}
-  spawnInterval: 6
+  goldenBubblePrefab: {fileID: 1118192075464478534, guid: 2dd7f43767b35c946983930e1c8acdb0, type: 3}
+  spawnIntervalMin: 10
+  spawnIntervalMax: 15
   minX: -5
   maxX: 5
 --- !u!1 &519420028
@@ -490,41 +491,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1157171267 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8172090754859433893, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-  m_PrefabInstance: {fileID: 7062860899228130891}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1157171268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157171267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd69f41dfd309bc41a56a76f0461dafd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  scorePenalty: 50
---- !u!114 &1157171269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157171267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd433499637b3845b4c65a3f7e9a368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  purpleBubblePrefab: {fileID: 1157171267}
-  spawnInterval: 5
-  minX: -5
-  maxX: 5
 --- !u!1 &1874896493
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,10 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38da3442647fd2c468848d4a1261a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLives: 3
-  scoreText: {fileID: 0}
-  livesText: {fileID: 0}
-  gameOverPanel: {fileID: 0}
 --- !u!4 &1874896495
 Transform:
   m_ObjectHideFlags: 0
@@ -629,11 +591,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1151840022775193793, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.22
+      value: 1.6395245
       objectReference: {fileID: 0}
     - target: {fileID: 1151840022775193793, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.97
+      value: 6.56
       objectReference: {fileID: 0}
     - target: {fileID: 1151840022775193793, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_LocalPosition.z
@@ -670,25 +632,9 @@ PrefabInstance:
     - target: {fileID: 5713718645116868791, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: rockPrefab
       value: 
-      objectReference: {fileID: 317777870}
-    - target: {fileID: 5713718645116868791, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
-      propertyPath: spawnInterval
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5713718645116868791, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
-      propertyPath: spawnIntervalMax
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5713718645116868791, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
-      propertyPath: spawnIntervalMin
-      value: 2
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
     - target: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
       propertyPath: m_Name
-      value: Rock
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
-      propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -709,11 +655,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 372164619383379207, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
       propertyPath: speed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 372164619383379207, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
-      propertyPath: maxScale
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 505593858364123569, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -759,78 +701,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble
       objectReference: {fileID: 0}
-    - target: {fileID: 8301119498029800389, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
-      propertyPath: spawnInterval
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
---- !u!1001 &7062860899228130891
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708216879809426681, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172090754859433893, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      propertyPath: m_Name
-      value: PurpleBubble
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8172090754859433893, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1157171269}
-    - targetCorrespondingSourceObject: {fileID: 8172090754859433893, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1157171268}
-  m_SourcePrefab: {fileID: 100100000, guid: 6ea360607219f2143b2928549bfd5ee1, type: 3}
 --- !u!1001 &7700664802172138256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -923,4 +798,3 @@ SceneRoots:
   - {fileID: 7700664802172138256}
   - {fileID: 2663900350888011285}
   - {fileID: 1951455708}
-  - {fileID: 7062860899228130891}
