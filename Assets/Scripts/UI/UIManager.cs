@@ -3,55 +3,77 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
-namespace Scrpits.UI
+//namespace Scripts.UI;
+
+public class UIManager : MonoBehaviour
 {
-    public class UIManager : MonoBehaviour
+    
+    [SerializeField] private TextMeshProUGUI scoreText;
+    public float Score;
+    [SerializeField] private TextMeshProUGUI highScoreText;
+    public float HighScore;
+
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private Image slider;
+    [SerializeField] private float timeLimit = 60.0f;
+
+    
+
+    float time;
+    float multiplierFactor;
+
+    private void OnEnable()
     {
         
-        [SerializeField] private TextMeshProUGUI scoreText;
-        [SerializeField] private TextMeshProUGUI highScoreText;
+    }
 
-        [SerializeField] private TMP_Text timerText;
-        [SerializeField] private Image slider;
-        [SerializeField] private float timeLimit = 60.0f;
-
-
-        float time;
-        float multiplierFactor;
-
-        private void OnEnable()
+    private void Start()
+    {
+        if (GameManager.Instance != null)
         {
-            
+            GameManager.Instance.OnScoreChanged.AddListener(UpdateScore); 
         }
+        scoreText.text = "Score: 0";
 
-        private void Start()
+        multiplierFactor = 1.0f / timeLimit;
+        time = 60.0f;
+        slider.fillAmount = time * multiplierFactor;
+
+        if (PlayerPrefs.HasKey("HighScore") )
         {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.OnScoreChanged.AddListener(UpdateScore);
-            }
+            HighScore = PlayerPrefs.GetFloat("HighScore");
+        }
+        else
+        {
+            HighScore = 0;
+        }
+    }
 
-            scoreText.text = "score: 0";
-
-            multiplierFactor = 1.0f / timeLimit;
-            time = 60.0f;
+    private void Update()
+    {
+        //HighScore = PlayerPrefs.GetFloat("HighScore");
+        if (time > 0)
+        {
+            time -= Time.deltaTime;
+            timerText.text = Mathf.CeilToInt(time).ToString();
             slider.fillAmount = time * multiplierFactor;
         }
-        
-        private void Update()
+
+
+        if (PlayerPrefs.GetFloat("HighScore") < Score)
         {
-            if (time > 0)
-            {
-                time -= Time.deltaTime;
-                timerText.text = Mathf.CeilToInt(time).ToString();
-                slider.fillAmount = time * multiplierFactor;
-            }
+            PlayerPrefs.SetFloat("HighScore", HighScore);
+            HighScore = Score;
+            highScoreText.text = "High Score: " + PlayerPrefs.GetFloat("HighScore");
         }
 
-        private void UpdateScore(int newScore)
-        {
-            scoreText.text = "Score: "+newScore;
-        }
-        
+        highScoreText.text = HighScore.ToString();
+        scoreText.text = Score.ToString();
+    }
+
+    private void UpdateScore(int newScore)
+    {
+        Score += newScore;
+        scoreText.text = "Score: "+newScore;
     }
 }
