@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton instance
     public UnityEvent<int> OnScoreChanged = new UnityEvent<int>();
-    private int score = 0;
+   
     public int playerLives = 3; 
 
     public Text scoreText; // Assign this in the Inspector
@@ -65,8 +65,7 @@ public class GameManager : MonoBehaviour
     // Update the UI elements with the latest score and lives
     void UpdateUI()
     {
-        if (scoreText != null)
-            scoreText.text = "Score: " + score;
+        
 
         if (livesText != null)
             livesText.text = "Lives: " + playerLives;

@@ -25,6 +25,7 @@ public class BubbleController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GameManager.Instance.AddScore(10);
         // Destroy bubble when clicked
         Destroy(gameObject);
     }

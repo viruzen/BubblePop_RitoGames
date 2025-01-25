@@ -15,15 +15,17 @@ namespace Scrpits.UI
        
         private void OnEnable()
         {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.OnScoreChanged.AddListener(UpdateScore);
-            }
+            
         }
 
         private void Start()
         {
-            scoreText.text = "0";
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnScoreChanged.AddListener(UpdateScore);
+            }
+
+            scoreText.text = "score: 0";
             _elapsedTime = 0.0f;
         }
         
@@ -31,11 +33,12 @@ namespace Scrpits.UI
         {
             _elapsedTime += Time.deltaTime;
             timeText.text = _elapsedTime.ToString("0.00");
+            
         }
 
         private void UpdateScore(int newScore)
         {
-            scoreText.text = newScore.ToString();
+            scoreText.text = "Score: "+newScore;
         }
         
     }
