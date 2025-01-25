@@ -14,7 +14,7 @@ public class BubbleSpawner : MonoBehaviour
 
     void SpawnBubble()
     {
-        if (GameObject.FindGameObjectsWithTag("Bubble").Length < 20) // Limit to 50 bubbles
+        if (GameObject.FindGameObjectsWithTag("Bubble").Length < 15) // Limit of bubbles
         {
             // Generate a random position within the defined range
             float randomX = Random.Range(minX, maxX);
@@ -24,10 +24,10 @@ public class BubbleSpawner : MonoBehaviour
         GameObject bubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity);
 
         // Add random color to the bubble
-        if (bubble.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
-        {
-            spriteRenderer.color = new Color(Random.value, Random.value, Random.value);
-        }
+        //if (bubble.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
+        //{
+        //    spriteRenderer.color = new Color(Random.value, Random.value, Random.value);
+        //}
     }
         }
 }
