@@ -8,6 +8,7 @@ TagManager:
   - GoldenBubble
   - Rock
   - PurpleBubble
+  - ExplosiveBubble
   layers:
   - Default
   - TransparentFX
