@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1151840022775193793}
   - component: {fileID: 8126912946655281857}
   - component: {fileID: 2862306505379912007}
-  - component: {fileID: 5713718645116868791}
   - component: {fileID: 3227851150462266107}
   m_Layer: 0
   m_Name: Rock
@@ -117,23 +116,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5713718645116868791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7011630042765216848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6a01f7e81512304cb0e387316a88b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 0}
-  spawnIntervalMin: 5
-  spawnIntervalMax: 10
-  minX: -5
-  maxX: 5
 --- !u!114 &3227851150462266107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,4 +129,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  lifePenalty: 1
