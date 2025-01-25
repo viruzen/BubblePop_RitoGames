@@ -12,7 +12,7 @@ namespace Scrpits.UI
         [SerializeField] private TextMeshProUGUI highScoreText;
         [SerializeField] private TextMeshProUGUI timeText;
         private float _elapsedTime;
-        private string filePath = Application.persistentDataPath+ "/highscore.json";
+       
         private void OnEnable()
         {
             if (GameManager.Instance != null)
