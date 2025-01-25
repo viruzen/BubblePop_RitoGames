@@ -194,6 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpeed: 1
   maxSpeed: 3
+  minScale: 0.7
+  maxScale: 1
   bonusPoints: 25
 --- !u!58 &359097949
 CircleCollider2D:
@@ -974,6 +976,18 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 505593858364123569, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.056379423
+      objectReference: {fileID: 0}
+    - target: {fileID: 505593858364123569, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.056379423
+      objectReference: {fileID: 0}
+    - target: {fileID: 505593858364123569, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.056379423
+      objectReference: {fileID: 0}
+    - target: {fileID: 505593858364123569, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1017,6 +1031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble
       objectReference: {fileID: 0}
+    - target: {fileID: 7621570270935255846, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4606500671294309736, guid: e61ebb7852f68cf43b24159669b1cd76, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1069,6 +1087,22 @@ PrefabInstance:
     - target: {fileID: 711484392820218303, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379876024195488024, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: m_Size.x
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379876024195488024, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: m_Size.y
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379876024195488024, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1619130810, guid: 2c5e578f72287994ca4a0783a2f88e00, type: 3}
+    - target: {fileID: 3379876024195488024, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937699678748697241, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
       propertyPath: speed
@@ -1156,6 +1190,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9191928170763859187, guid: 2dd7f43767b35c946983930e1c8acdb0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4303971030276983457, guid: 336f0a4ca887ba548bb9f277ba7ea59c, type: 3}
     - target: {fileID: 9191928170763859187, guid: 2dd7f43767b35c946983930e1c8acdb0, type: 3}
       propertyPath: m_Color.b
       value: 0
