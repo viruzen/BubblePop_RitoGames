@@ -7,19 +7,7 @@ public class GameManager : MonoBehaviour
     
     public UnityEvent<int> OnScoreChanged = new UnityEvent<int>();
 
-   
-    public int playerLives = 3; 
-
-
-    
-    // Game variables
-    private int score = 0; // Tracks player score
-    public Text scoreText; // Assign this in the Inspector
-    public Text livesText; // Assign this in the Inspector
     private int _score;
-    public GameObject gameOverPanel; // Assign this in the Inspector for Game Over UI
-
-
     void Awake()
     {
         // Ensure there s only one instance of GameManager
@@ -34,7 +22,6 @@ public class GameManager : MonoBehaviour
         }
 
         // Initialize UI at the start
-        UpdateUI();
     }
 
     public void AddScore(int amount)
@@ -48,7 +35,7 @@ public class GameManager : MonoBehaviour
     }
     public int GetScore()
     {
-        return score;
+        return _score;
     }
 
     private void GameOver()
@@ -62,11 +49,6 @@ public class GameManager : MonoBehaviour
         //    Debug.Log("Game Over! Restarting the game...");
     }
 
-    // Update the UI elements with the latest score and lives
-    void UpdateUI()
-    {
-        
-
-    }
+ 
 
 }
