@@ -14,7 +14,7 @@ public class BubbleSpawner : MonoBehaviour
 
     void SpawnBubble()
     {
-        if (GameObject.FindGameObjectsWithTag("Bubble").Length < 15) // Limit of bubbles
+        if (GameObject.FindGameObjectsWithTag("Bubble").Length < 7) // Limit of bubbles
         {
             // Generate a random position within the defined range
             float randomX = Random.Range(minX, maxX);
