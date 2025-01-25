@@ -3,46 +3,43 @@ using UnityEngine;
 public class GoldenBubbleSpawner : MonoBehaviour
 {
     public GameObject goldenBubblePrefab; // Drag the Golden Bubble prefab here in the Inspector
-    public float spawnIntervalMin = 10f; // Minimum time before a golden bubble spawns
-    public float spawnIntervalMax = 20f; // Maximum time before a golden bubble spawns
+    public float spawnInterval = 5f; // Fixed time before a golden bubble spawns
     public float minX = -5f, maxX = 5f; // Horizontal range for spawning golden bubbles
 
     private float nextSpawnTime; // Time until the next golden bubble spawns
 
     void Start()
     {
-        ScheduleNextGoldenBubble();
+        nextSpawnTime = Time.time + spawnInterval; // Set the initial spawn time
     }
 
     void Update()
     {
+        // Check if the time has passed for spawning the next golden bubble
         if (Time.time >= nextSpawnTime)
         {
             SpawnGoldenBubble();
-            ScheduleNextGoldenBubble();
+            nextSpawnTime = Time.time + spawnInterval; // Set the next spawn time
         }
     }
 
     void SpawnGoldenBubble()
     {
-        if (goldenBubblePrefab == null)
+        if (GameObject.FindGameObjectsWithTag("GoldenBubble").Length < 5) // Limit of bubbles
         {
-            Debug.LogError("Golden Bubble Prefab is not assigned!");
-            return;
+            if (goldenBubblePrefab == null)
+            {
+                Debug.LogError("Golden Bubble Prefab is not assigned!");
+                return;
+            }
+
+            // Generate a random position for the golden bubble
+            float randomX = Random.Range(minX, maxX);
+            Vector3 spawnPosition = new Vector3(randomX, -Camera.main.orthographicSize - 1, 0);
+
+            // Instantiate the golden bubble
+            Instantiate(goldenBubblePrefab, spawnPosition, Quaternion.identity);
+            Debug.Log("Golden bubble spawned!");
         }
-
-        // Generate a random position for the golden bubble
-        float randomX = Random.Range(minX, maxX);
-        Vector3 spawnPosition = new Vector3(randomX, -Camera.main.orthographicSize - 1, 0);
-
-        // Instantiate the golden bubble
-        Instantiate(goldenBubblePrefab, spawnPosition, Quaternion.identity);
-        Debug.Log("Golden bubble spawned!");
-    }
-
-    void ScheduleNextGoldenBubble()
-    {
-        // Set the time for the next golden bubble to spawn
-        nextSpawnTime = Time.time + Random.Range(spawnIntervalMin, spawnIntervalMax);
     }
 }
