@@ -31,12 +31,26 @@ public class ExplosiveAttribute : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
         // Destroy bubble when clicked
         clicked = true;
         for(int i = objInRadius.Count-1; i > 0; i--){
             Debug.Log(i);
             Debug.Log(objInRadius.Count);
 
+            if (objInRadius[i].tag == "Bubble")
+            {
+                GameManager.Instance.AddScore(10);
+            }
+            else if (objInRadius[i].tag == "GoldenBubble")
+            {
+                GameManager.Instance.AddScore(20);
+            }
+            else if (objInRadius[i].tag == "PurpleBubble")
+            {
+                GameManager.Instance.AddScore(-50);
+            }
+           
             Destroy(objInRadius[i]);
         }
         objInRadius.Clear();

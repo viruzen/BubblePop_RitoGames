@@ -4,6 +4,7 @@ public class RockController : MonoBehaviour
 {
     public float speed = 2f; // Speed at which the rock moves upward
 
+    
     private void Update()
     {
         // Move the rock upward

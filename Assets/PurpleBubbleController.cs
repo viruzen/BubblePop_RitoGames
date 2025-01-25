@@ -4,7 +4,7 @@ public class PurpleBubbleController : MonoBehaviour
 {
     public float speed = 2f; // Speed at which the bubble moves
     public int scorePenalty = 50; // Score lost when the purple bubble is clicked
-
+    
     void Start()
     {
         // Assign a random speed for the purple bubble (if you want randomness)
@@ -25,12 +25,8 @@ public class PurpleBubbleController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Apply score penalty (damage to the score) when clicked
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.AddScore(-scorePenalty); // Deduct score
-            Debug.Log("Purple bubble clicked! Player loses " + scorePenalty + " points.");
-        }
+
+        GameManager.Instance.AddScore(-50);
 
         // Destroy the purple bubble
         Destroy(gameObject);

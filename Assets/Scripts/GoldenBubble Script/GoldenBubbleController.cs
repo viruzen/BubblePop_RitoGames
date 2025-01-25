@@ -10,6 +10,7 @@ public class GoldenBubbleController : MonoBehaviour
 
     public int bonusPoints = 10; // Points awarded for clicking a golden bubble
 
+   
     void Start()
     {
         // Assign a random upward speed
@@ -34,12 +35,11 @@ public class GoldenBubbleController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Add bonus points to the score and destroy the bubble
-        GameManager.Instance.AddScore(bonusPoints);
-        Debug.Log("Golden bubble clicked! Bonus points: " + bonusPoints);
 
         ////Play a sound
         ////AudioSource.PlayClipAtPoint(yourAudioClip, transform.position);
+        
+        GameManager.Instance.AddScore(20);
 
         Destroy(gameObject);
     }
