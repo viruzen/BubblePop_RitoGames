@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class Timer : MonoBehaviour
         else
         {
             //Load the scoreboard
-           
+            SceneManager.LoadSceneAsync("GameOver");    
         }
 
     }
