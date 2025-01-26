@@ -386,8 +386,8 @@ MonoBehaviour:
     maxActive: 2
     tag: ExplosiveBubble
   - prefab: {fileID: 6316530070265192625, guid: 1a7de8cd6aba6ff4b8a77f1a64d7cdff, type: 3}
-    minInterval: 2
-    maxInterval: 3
+    minInterval: 7
+    maxInterval: 12
     maxActive: 1
     tag: TimeBubble
 --- !u!1 &519420028
