@@ -44,7 +44,7 @@ public class TimeBubbleController : MonoBehaviour
         spRenderer.enabled = false ;
         // Slow down the time
         Time.timeScale = 0.1f;
-
+        SoundManager.instance.SetPitch(Time.timeScale);
         float timePassed = 0.0f;
 
         // Wait for the specified duration
@@ -56,6 +56,7 @@ public class TimeBubbleController : MonoBehaviour
         }
         // Restore the time scale to normal
         Time.timeScale = 1.0f;
+        SoundManager.instance.ResetPitch();
         Destroy(gameObject);
 
     }

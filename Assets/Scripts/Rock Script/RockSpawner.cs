@@ -81,7 +81,7 @@ public class RockSpawner : MonoBehaviour
         Debug.Log($"[RockSpawner] Next spawn in {nextSpawnInterval} seconds.");
     }
 
-    private void OnCollisionEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     { 
         Destroy(other.gameObject);
     }

@@ -15,4 +15,13 @@ public class SoundManager : MonoBehaviour
     {
         source.PlayOneShot(_sound);
     }
+    public void SetPitch(float pitch)
+    {
+        source.pitch = pitch;
+    }
+
+    public void ResetPitch()
+    {
+        source.pitch = 1.0f; // Default pitch
+    }
 }
