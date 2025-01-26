@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - PurpleBubble
   - ExplosiveBubble
+  - TimeBubble
   layers:
   - Default
   - TransparentFX

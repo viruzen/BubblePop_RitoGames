@@ -3,6 +3,7 @@ using Unity.VisualScripting.ReorderableList;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.UIElements;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class TimeBubbleController : MonoBehaviour
@@ -12,9 +13,11 @@ public class TimeBubbleController : MonoBehaviour
     public float maxSpeed = 3f;
     public float minScale = 0.7f; // Minimum scale for bubble size
     public float maxScale = 1.3f; // Maximum scale
+    public Collider2D clickBox; 
+    public SpriteRenderer spRenderer;
 
     private float fixedDeltaTime;
-    bool Clicked; 
+     
 
 
 
@@ -25,9 +28,7 @@ public class TimeBubbleController : MonoBehaviour
         // Move the bubble upwards
         transform.Translate(Vector2.up * speed * Time.deltaTime);
 
-        // Assign a random size (scale)
-        float randomScale = Random.Range(minScale, maxScale);
-        transform.localScale = new Vector3(randomScale, randomScale, 1f);
+
 
         // Destroy the bubble if it goes off-screen
         if (transform.position.y > Camera.main.orthographicSize + 1)
@@ -39,9 +40,11 @@ public class TimeBubbleController : MonoBehaviour
     }
     IEnumerator SlowTimeScale()
     {
-
+        clickBox.enabled = false;
+        spRenderer.enabled = false ;
         // Slow down the time
         Time.timeScale = 0.1f;
+
         float timePassed = 0.0f;
 
         // Wait for the specified duration
