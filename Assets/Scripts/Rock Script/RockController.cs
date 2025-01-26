@@ -7,8 +7,8 @@ public class RockController : MonoBehaviour
     
     private void Update()
     {
-        // Move the rock upward
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        // Move the rock downward
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
 
         // Destroy the rock if it goes off-screen
         if (transform.position.y > Camera.main.orthographicSize + 1)
@@ -28,4 +28,17 @@ public class RockController : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the rock collided with a bubble
+        if (collision.CompareTag("Bubble"))
+        {
+            // Destroy the bubble
+            Destroy(collision.gameObject);
+            Debug.Log("Rock destroyed a bubble!");
+        }
+    }
+
 }

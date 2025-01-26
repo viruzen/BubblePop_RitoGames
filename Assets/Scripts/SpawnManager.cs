@@ -59,8 +59,21 @@ public class SpawnManager : MonoBehaviour
         }
 
         // Generate a random spawn position
-        float randomX = Random.Range(-5f, 5f); // Adjust as needed for your game
-        Vector3 spawnPosition = new Vector3(randomX, -Camera.main.orthographicSize - 1, 0);
+        // Change spawn position logic for rocks
+        float randomX = Random.Range(-5f, 5f); // Horizontal range
+        //float randomY = Random.Range(-Camera.main.orthographicSize - 1, Camera.main.orthographicSize + 1); // Vertical range
+        Vector3 spawnPosition;
+
+        if (settings.tag == "Rock") // Special logic for rocks
+        {
+            // Example: Spawn rocks at the top of the screen
+            spawnPosition = new Vector3(randomX, Camera.main.orthographicSize - 1, 0); // Above the screen
+        }
+        else
+        {
+            // Default behavior
+            spawnPosition = new Vector3(randomX, -Camera.main.orthographicSize - 1, 0); // Below the screen
+        }
 
         // Instantiate the object
         Instantiate(settings.prefab, spawnPosition, Quaternion.identity);
