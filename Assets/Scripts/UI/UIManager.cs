@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI scoreText;
-    public float Score;
+    private float Score;
     [SerializeField] private TextMeshProUGUI highScoreText;
     public float HighScore;
 
@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
         }
 
         highScoreText.text = HighScore.ToString();
-        scoreText.text = Score.ToString();
+        
     }
 
     private void UpdateScore(int newScore)

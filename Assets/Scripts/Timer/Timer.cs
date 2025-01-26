@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if (time >= 0)
+        if (time >0)
         {
             time -= Time.deltaTime;
             timerText.text = Mathf.CeilToInt(time).ToString();
