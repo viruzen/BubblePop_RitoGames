@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55531a0f172e9f64e8036f7fe8bd55f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayTime: 2
+  displayTime: 3
 --- !u!1 &214733657
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
   - prefab: {fileID: 6316530070265192625, guid: c3958961a8d19d140a95428d45f0690a, type: 3}
     minInterval: 0.25
     maxInterval: 0.5
-    maxActive: 40
+    maxActive: 50
     tag: Bubble
   - prefab: {fileID: 1118192075464478534, guid: 2dd7f43767b35c946983930e1c8acdb0, type: 3}
     minInterval: 10
@@ -371,18 +371,18 @@ MonoBehaviour:
     maxActive: 3
     tag: GoldenBubble
   - prefab: {fileID: 4509852303664382283, guid: 2ff602c8902226d4a941de3c0643a84a, type: 3}
-    minInterval: 5
+    minInterval: 3
     maxInterval: 7
     maxActive: 3
     tag: PurpleBubble
   - prefab: {fileID: 7011630042765216848, guid: 3c83adc0909f58147b7f3ee9169f4177, type: 3}
-    minInterval: 1.5
-    maxInterval: 3
+    minInterval: 0.75
+    maxInterval: 1.5
     maxActive: 5
     tag: Rock
   - prefab: {fileID: 1118192075464478534, guid: 5354402fb04d9a04b913679afe103d74, type: 3}
-    minInterval: 15
-    maxInterval: 20
+    minInterval: 13
+    maxInterval: 18
     maxActive: 2
     tag: ExplosiveBubble
 --- !u!1 &519420028
