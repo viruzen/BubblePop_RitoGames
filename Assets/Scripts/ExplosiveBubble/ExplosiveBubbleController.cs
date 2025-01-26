@@ -55,21 +55,23 @@ public class ExplosiveAttribute : MonoBehaviour
         {
             Debug.Log(i);
             Debug.Log(objInRadius.Count);
+            if (objInRadius[i] != null)
+            {
+                if (objInRadius[i].tag == "Bubble")
+                {
+                    GameManager.Instance.AddScore(10);
+                }
+                else if (objInRadius[i].tag == "GoldenBubble")
+                {
+                    GameManager.Instance.AddScore(20);
+                }
+                else if (objInRadius[i].tag == "PurpleBubble")
+                {
+                    GameManager.Instance.AddScore(-50);
+                }
 
-            if (objInRadius[i].tag == "Bubble")
-            {
-                GameManager.Instance.AddScore(10);
+                Destroy(objInRadius[i]);
             }
-            else if (objInRadius[i].tag == "GoldenBubble")
-            {
-                GameManager.Instance.AddScore(20);
-            }
-            else if (objInRadius[i].tag == "PurpleBubble")
-            {
-                GameManager.Instance.AddScore(-50);
-            }
-
-            Destroy(objInRadius[i]);
         }
         objInRadius.Clear();
         Destroy(gameObject);
