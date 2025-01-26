@@ -15,6 +15,10 @@ public class RockController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (transform.position.y < -Camera.main.orthographicSize - 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()
