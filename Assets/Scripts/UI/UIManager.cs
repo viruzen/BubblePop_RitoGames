@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
 
 
         multiplierFactor = 1.0f / timeLimit;
-        time = 10.0f;
+        time = 60.0f;
         slider.fillAmount = time * multiplierFactor;
 
         if (PlayerPrefs.HasKey("HighScore"))
