@@ -17,22 +17,21 @@ public class Timer : MonoBehaviour
         multiplierFactor = 1.0f / timeLimit;
         time = 60.0f;
         slider.fillAmount = time * multiplierFactor;
-
     }
 
     private void Update()
     {
-        if (time >0)
+        if (time >1.0f)
         {
             time -= Time.deltaTime;
             timerText.text = Mathf.CeilToInt(time).ToString();
             slider.fillAmount = time * multiplierFactor;
         }
-        else
-        {
+       
             //Load the scoreboard
-            SceneManager.LoadSceneAsync("GameOver");    
-        }
+            SceneManager.LoadSceneAsync("GameOver");
+            
+        
 
     }
 }
