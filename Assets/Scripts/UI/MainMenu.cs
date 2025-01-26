@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         highScoreText.text = " " + PlayerPrefs.GetFloat("HighScore");
+       
     }
     public void QuitGame()
     {

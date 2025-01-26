@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6f74021742ca3f419d730ee24912714
+guid: be418caffded1304fabb21456a379499
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   - Bubble Mint
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 1
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

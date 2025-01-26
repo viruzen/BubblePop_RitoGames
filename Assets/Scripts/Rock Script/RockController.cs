@@ -4,7 +4,8 @@ public class RockController : MonoBehaviour
 {
     public float speed = 2f; // Speed at which the rock moves upward
 
-    
+    [SerializeField] private AudioClip Rock_sb;
+
     private void Update()
     {
         // Move the rock downward
@@ -39,6 +40,7 @@ public class RockController : MonoBehaviour
         // Check if the rock collided with a bubble
         if (collision.CompareTag("Bubble"))
         {
+            SoundManager.instance.PlaySound(Rock_sb);
             // Destroy the bubble
             Destroy(collision.gameObject);
             Debug.Log("Rock destroyed a bubble!");
