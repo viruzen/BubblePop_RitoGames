@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //namespace Scripts.UI;
 
 public class UIManager : MonoBehaviour
@@ -36,7 +37,7 @@ public class UIManager : MonoBehaviour
 
 
         multiplierFactor = 1.0f / timeLimit;
-        time = 60.0f;
+        time = 10.0f;
         slider.fillAmount = time * multiplierFactor;
 
         if (PlayerPrefs.HasKey("HighScore"))
@@ -44,14 +45,8 @@ public class UIManager : MonoBehaviour
             HighScore = PlayerPrefs.GetFloat("HighScore");
         }
         else
-
         {
             HighScore = 0;
-
-
-
-
-
         }
     }
 
@@ -65,6 +60,10 @@ public class UIManager : MonoBehaviour
             slider.fillAmount = time * multiplierFactor;
         }
 
+        if (time <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 
         if (PlayerPrefs.GetFloat("HighScore") < Score)
         {
