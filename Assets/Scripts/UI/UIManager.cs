@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     private float Score;
     [SerializeField] private TextMeshProUGUI highScoreText;
-    public float HighScore;
+    private float HighScore;
 
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private Image slider;
@@ -22,18 +22,13 @@ public class UIManager : MonoBehaviour
     float time;
     float multiplierFactor;
 
-    private void OnEnable()
-    {
-
-    }
-
     private void Start()
     {
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnScoreChanged.AddListener(UpdateScore);
         }
-        scoreText.text = "Score: 0";
+        
 
 
         multiplierFactor = 1.0f / timeLimit;
@@ -48,6 +43,8 @@ public class UIManager : MonoBehaviour
         {
             HighScore = 0;
         }
+        scoreText.text = "Score: 0";
+        highScoreText.text = "High Score: " + HighScore;
     }
 
     private void Update()
@@ -72,7 +69,7 @@ public class UIManager : MonoBehaviour
             highScoreText.text = "High Score: " + PlayerPrefs.GetFloat("HighScore");
         }
 
-        highScoreText.text = HighScore.ToString();
+        highScoreText.text = "High Score: " + HighScore;
         
     }
 
@@ -80,5 +77,9 @@ public class UIManager : MonoBehaviour
     {
         Score += newScore;
         scoreText.text = "Score: " + newScore;
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
