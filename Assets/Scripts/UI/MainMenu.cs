@@ -7,7 +7,14 @@ public class MainMenu : MonoBehaviour
     public void StartGame(){
         SceneManager.LoadSceneAsync("Game");    
     }
-
+    public void BackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits"); 
+    }
     private void Update()
     {
         highScoreText.text = " " + PlayerPrefs.GetFloat("HighScore");
