@@ -4,6 +4,7 @@ public class PurpleBubbleController : MonoBehaviour
 {
     public float speed = 2f; // Speed at which the bubble moves
     public int scorePenalty = 50; // Score lost when the purple bubble is clicked
+    
     [SerializeField] private AudioClip Poison_bb;
     void Start()
     {
