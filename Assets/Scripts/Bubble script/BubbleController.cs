@@ -8,7 +8,8 @@ public class BubbleController : MonoBehaviour
     public float minScale = 0.7f; // Minimum scale for bubble size
     public float maxScale = 1.3f; // Maximum scale
 
-  
+    [SerializeField] private AudioClip Bubble_bb;
+
     void Update()
     {
         // Move the bubble upwards
@@ -27,6 +28,7 @@ public class BubbleController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        SoundManager.instance.PlaySound(Bubble_bb);
         GameManager.Instance.AddScore(10);
         // Destroy bubble when clicked
         Destroy(gameObject);

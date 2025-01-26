@@ -167,3 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   scorePenalty: 50
+  Poison_bb: {fileID: 8300000, guid: be7457c9b35b4224fb97f5c46237301f, type: 3}

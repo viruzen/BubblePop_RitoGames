@@ -170,3 +170,4 @@ MonoBehaviour:
   maxSpeed: 5
   minScale: 1
   maxScale: 1
+  Bubble_bb: {fileID: 8300000, guid: dd17ca265eb54c54a9397746c547ed02, type: 3}
