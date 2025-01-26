@@ -10,7 +10,8 @@ public class GoldenBubbleController : MonoBehaviour
 
     public int bonusPoints = 10; // Points awarded for clicking a golden bubble
 
-   
+    [SerializeField] private AudioClip Golden_bb;
+
     void Start()
     {
         // Assign a random upward speed
@@ -38,7 +39,7 @@ public class GoldenBubbleController : MonoBehaviour
 
         ////Play a sound
         ////AudioSource.PlayClipAtPoint(yourAudioClip, transform.position);
-        
+        SoundManager.instance.PlaySound(Golden_bb);
         GameManager.Instance.AddScore(20);
 
         Destroy(gameObject);

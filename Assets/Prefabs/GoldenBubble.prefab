@@ -170,3 +170,4 @@ MonoBehaviour:
   minScale: 1.3
   maxScale: 1.3
   bonusPoints: 10
+  Golden_bb: {fileID: 8300000, guid: 0f3400efe3b1af9438f8def54fddf21c, type: 3}

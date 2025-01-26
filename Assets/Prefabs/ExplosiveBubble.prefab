@@ -107,6 +107,7 @@ MonoBehaviour:
   minScale: 1.2
   maxScale: 1.3
   ExplosiveRadius: {fileID: -1374770293168407759}
+  Explosive_bb: {fileID: 8300000, guid: 08f4d3830222c1a4e872e2806f84ba52, type: 3}
 --- !u!58 &-1374770293168407759
 CircleCollider2D:
   m_ObjectHideFlags: 0

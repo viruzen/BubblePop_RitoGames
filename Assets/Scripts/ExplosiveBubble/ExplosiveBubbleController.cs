@@ -17,7 +17,9 @@ public class ExplosiveAttribute : MonoBehaviour
 
     private bool clicked = false;
     private List <GameObject> objInRadius = new List<GameObject>();
-    
+
+    [SerializeField] private AudioClip Explosive_bb;
+
     void Update()
     {
         // Move the bubble upwards
@@ -35,15 +37,18 @@ public class ExplosiveAttribute : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         mouseWorldPosition.z = 0.0f;
         Vector3 bubblePos;
         bubblePos = this.transform.position; 
-        bubblePos.z = 0.0f; 
+        bubblePos.z = 0.0f;
+
+       
         // Destroy bubble when clicked
         if (Vector3.Distance(mouseWorldPosition, this.transform.position) <= 0.8) {
-            
+            SoundManager.instance.PlaySound(Explosive_bb);
             DestroyObjectsInRadius();
         }
         
